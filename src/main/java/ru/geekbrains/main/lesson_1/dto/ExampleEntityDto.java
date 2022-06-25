@@ -10,4 +10,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExampleEntityDto implements Serializable {
+
+    private Long id;
+    private String firstName;
+    private String lastName;
 }
