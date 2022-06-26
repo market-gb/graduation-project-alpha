@@ -1,12 +1,12 @@
-package ru.geekbrains.main.controllers;
+package ru.geekbrains.main.lesson_1.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.main.dto.ProductDto;
-import ru.geekbrains.main.exceptions.ResourceException;
-import ru.geekbrains.main.services.ProductService;
+import ru.geekbrains.main.lesson_1.dto.ProductDto;
+import ru.geekbrains.main.lesson_1.exceptions.ResourceException;
+import ru.geekbrains.main.lesson_1.services.ProductService;
 
 @RestController
 @RequiredArgsConstructor

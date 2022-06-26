@@ -1,8 +1,8 @@
-package ru.geekbrains.main.converters;
+package ru.geekbrains.main.lesson_1.converters;
 
 import org.springframework.stereotype.Component;
-import ru.geekbrains.main.dto.ProductDto;
-import ru.geekbrains.main.entities.Product;
+import ru.geekbrains.main.lesson_1.dto.ProductDto;
+import ru.geekbrains.main.lesson_1.entities.Product;
 
 @Component
 public class ProductConverter {

@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExampleEntityDto implements Serializable {
+public class ExampleDto implements Serializable {
 
     private Long id;
     private String firstName;

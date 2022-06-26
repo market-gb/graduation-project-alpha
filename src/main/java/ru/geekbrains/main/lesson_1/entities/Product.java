@@ -1,4 +1,4 @@
-package ru.geekbrains.main.entities;
+package ru.geekbrains.main.lesson_1.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

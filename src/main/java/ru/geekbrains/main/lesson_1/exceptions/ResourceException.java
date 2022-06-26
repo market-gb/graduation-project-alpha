@@ -1,4 +1,4 @@
-package ru.geekbrains.main.exceptions;
+package ru.geekbrains.main.lesson_1.exceptions;
 
 public class ResourceException extends RuntimeException{
     public ResourceException(String message) {

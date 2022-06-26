@@ -1,4 +1,4 @@
-package ru.geekbrains.main.dto;
+package ru.geekbrains.main.lesson_1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
