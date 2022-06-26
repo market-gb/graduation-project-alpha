@@ -1,8 +1,10 @@
 package ru.geekbrains.main.lesson_1.services;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 import ru.geekbrains.main.lesson_1.converters.BerriesConverter;
 import ru.geekbrains.main.lesson_1.dao.BerriesRepository;
+import ru.geekbrains.main.lesson_1.dto.BerriesDto;
 import ru.geekbrains.main.lesson_1.entities.Berries;
 
 import java.util.List;
@@ -23,6 +25,14 @@ public class BerriesService {
 
     public Berries save(Berries berries) {
         return berriesRepository.save(berries);
+    }
+
+    @Transactional
+    public Berries update(BerriesDto berriesDto) throws Exception {
+        Berries product = berriesRepository.findById(berriesDto.getId()).orElseThrow(() -> new Exception("Невозможно обновить продукта, не найден в базе, id: " + berriesDto.getId()));
+        product.setPrice(berriesDto.getPrice());
+        product.setTitle(berriesDto.getTitle());
+        return product;
     }
 
     public List<Berries> findAll() {
