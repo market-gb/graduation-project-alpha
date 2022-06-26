@@ -1,11 +1,11 @@
-create table example
+create table berries
 (
     id         bigserial primary key,
-    first_name varchar(255) not null,
-    last_name  varchar(255) not null
+    title      varchar(255)  not null,
+    price      numeric(8, 2) not null
 );
 
-insert into example (first_name, last_name)
-values ('Вася', 'Пупкин'),
-       ('Иван', 'Иванов'),
-       ('Петр', 'Петров');
+insert into berries (title, price)
+values ('Черешня', 399),
+       ('Клубника', 299),
+       ('Голубика', 199);
