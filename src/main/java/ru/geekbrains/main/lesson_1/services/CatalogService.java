@@ -19,10 +19,8 @@ public class CatalogService {
 
     public List<CatalogDto> findAll () {
         List<CatalogEntity> catalogEntities = catalogRepository.findAll();
-        catalogEntities.forEach(e-> System.out.println(e.getName()));
         List<CatalogDto> catalogDtos = new ArrayList<>();
         catalogEntities.forEach(c -> catalogDtos.add(catalogConverter.entityToDto(c)));
-        catalogDtos.forEach(e-> System.out.println(e.getName()));
         return catalogDtos;
     }
 
