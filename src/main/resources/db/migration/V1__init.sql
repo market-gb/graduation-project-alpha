@@ -1,13 +1,20 @@
-create table cars
+
+create table products
 (
     id         bigserial primary key,
-    model      varchar(255)  not null,
+    title      varchar(255)  not null,
     price      numeric(8, 2) not null
 );
 
-insert into cars (title, model)
-values ('Acura TLX Technology', 41493.00),
-       ('Mitsubishi Outlander', 22000.00),
-       ('Nissan Pathfinder SL', 29489.00),
-       ('BMW 530e iPerformance', 39900.00),
-       ('Tesla Model 3 Long Range', 64997.00);
+insert into products (title, price)
+values ('Milk', 50.20),
+       ('Bread', 20.20),
+       ('Cheese', 490.20),
+       ('Apple', 90.00),
+       ('Orange', 90.00),
+       ('Fish', 290.00),
+       ('Meat', 350.00),
+       ('Cabbage', 20.00),
+       ('Carrot', 18.00),
+       ('Onion', 32.00),
+       ('Candies', 450.00);
