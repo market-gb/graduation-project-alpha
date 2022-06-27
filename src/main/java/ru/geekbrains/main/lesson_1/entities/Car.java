@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "cars")
@@ -22,5 +23,5 @@ public class Car {
     private  String model;
 
     @Column(name = "price")
-    private String price;
+    private BigDecimal price;
 }
