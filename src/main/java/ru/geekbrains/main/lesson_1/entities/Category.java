@@ -28,4 +28,9 @@ public class Category {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    public Category(Long id, String title) {
+        this.id = id;
+        this.title = title;
+    }
 }
