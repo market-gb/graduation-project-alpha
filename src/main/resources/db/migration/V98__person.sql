@@ -1,4 +1,4 @@
-create table users
+create table person
 (
     id         bigserial primary key,
     first_name varchar(255) not null,
@@ -6,7 +6,7 @@ create table users
     email      varchar(255) not null
 );
 
-insert into users (first_name, last_name, email)
+insert into person (first_name, last_name, email)
 values ('Ivan', 'Ivanov', 'ivanov@mail.ru'),
        ('Petr', 'Petrov', 'petrov@mail.ru'),
        ('Semen', 'Semenov', 'semenov@mail.ru');
