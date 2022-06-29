@@ -2,7 +2,7 @@ version: '3.8'
 services:
   postgres:
     container_name: pg_container
-    image: postgres:14.2
+    image: postgres:12.6
     environment:
       - POSTGRES_DB=lesson-1
       - POSTGRES_USER=postgres
@@ -34,3 +34,16 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
+
+  backend_spring:
+    container_name: backend_spring
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - 'spring.datasource.url=jdbc:postgresql://192.168.1.56:5432/lesson-1?user=postgres&password=postgres'
+      - 'spring.datasource.hikari.schema=public'
+    ports:
+      - "9090:9090"
+    depends_on:
+      - flyway
