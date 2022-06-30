@@ -41,20 +41,19 @@ services:
     networks:
       - gb-net
 
-  backend_spring:
-    container_name: backend_spring
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-#      - 'spring.datasource.url=jdbc:postgresql://192.168.1.56:5432/lesson-1?user=postgres&password=postgres'
-      - 'spring.datasource.hikari.schema=public'
-    ports:
-      - "8000:8000"
-    depends_on:
-      - flyway
-    networks:
-      - gb-net
+#  backend_spring:
+#    container_name: backend_spring
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    environment:
+#      - 'spring.datasource.hikari.schema=public'
+#    ports:
+#      - "8000:8000"
+#    depends_on:
+#      - flyway
+#    networks:
+#      - gb-net
 networks:
   gb-net:
     driver: bridge
