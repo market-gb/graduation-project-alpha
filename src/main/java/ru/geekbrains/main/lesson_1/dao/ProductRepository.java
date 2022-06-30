@@ -1,4 +1,4 @@
-package ru.geekbrains.main.lesson_1.repositories;
+package ru.geekbrains.main.lesson_1.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

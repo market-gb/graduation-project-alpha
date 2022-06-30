@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExampleDto implements Serializable {
+public class ExampleEntityDto implements Serializable {
 
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String title;
+    private BigDecimal price;
 }
