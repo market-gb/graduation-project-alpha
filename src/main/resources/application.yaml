@@ -7,10 +7,15 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: postgres
-    url: jdbc:postgresql://localhost:5432/lesson-1
+    url: jdbc:postgresql://host.docker.internal:5432/lesson-1
   jpa:
     show-sql: true
     properties:
       hibernate:
         ddl-auto: create-drop
         dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
