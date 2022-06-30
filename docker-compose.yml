@@ -2,13 +2,15 @@ version: '3.8'
 services:
   postgres:
     container_name: pg_container
-    image: postgres:12.6
+    image: postgres:14.2
     environment:
       - POSTGRES_DB=lesson-1
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
       - '5432:5432'
+    networks:
+      - gb-net
     healthcheck:
       test: [ "CMD", "pg_isready", "-q", "-U", "postgres" ]
       interval: 5s
@@ -24,6 +26,8 @@ services:
       - ./src/main/resources/db/migration:/flyway/sql
     depends_on:
       - postgres
+    networks:
+      - gb-net
 
   pgadmin:
     container_name: pgadmin4_container
@@ -34,6 +38,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
+    networks:
+      - gb-net
 
   backend_spring:
     container_name: backend_spring
@@ -41,9 +47,14 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - 'spring.datasource.url=jdbc:postgresql://192.168.1.56:5432/lesson-1?user=postgres&password=postgres'
+#      - 'spring.datasource.url=jdbc:postgresql://192.168.1.56:5432/lesson-1?user=postgres&password=postgres'
       - 'spring.datasource.hikari.schema=public'
     ports:
-      - "9090:9090"
+      - "8000:8000"
     depends_on:
       - flyway
+    networks:
+      - gb-net
+networks:
+  gb-net:
+    driver: bridge
