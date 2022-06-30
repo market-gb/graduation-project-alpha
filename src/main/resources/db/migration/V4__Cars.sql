@@ -5,7 +5,7 @@ create table cars
     price      numeric(8, 2) not null
 );
 
-insert into cars (title, model)
+insert into cars (model, price)
 values ('Acura TLX Technology', 41493.00),
        ('Mitsubishi Outlander', 22000.00),
        ('Nissan Pathfinder SL', 29489.00),

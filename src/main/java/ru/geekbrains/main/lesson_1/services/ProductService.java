@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.geekbrains.main.lesson_1.converters.ProductConverter;
 import ru.geekbrains.main.lesson_1.dto.ProductDto;
 import ru.geekbrains.main.lesson_1.exceptions.ResourceException;
-import ru.geekbrains.main.lesson_1.dao.ProductRepository;
+import ru.geekbrains.main.lesson_1.repositories.ProductRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;

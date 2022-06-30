@@ -3,9 +3,9 @@ package ru.geekbrains.main.lesson_1.services;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import ru.geekbrains.main.lesson_1.converters.BerriesConverter;
-import ru.geekbrains.main.lesson_1.dao.BerriesRepository;
 import ru.geekbrains.main.lesson_1.dto.ExampleEntityDto;
 import ru.geekbrains.main.lesson_1.entities.Berries;
+import ru.geekbrains.main.lesson_1.repositories.BerriesRepository;
 
 import java.util.List;
 import java.util.Optional;
