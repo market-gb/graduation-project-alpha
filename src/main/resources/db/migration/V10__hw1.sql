@@ -9,4 +9,5 @@ create table comments
 insert into comments (text, author_name) values
    ('Great product. I am happy.', 'Lucky'),
    ('I didnt like its color', 'Grumbler'),
+   ('Worst internet shop which i ever seen', 'Grumbler'),
    ('Great store with a good range of products', 'grateful buyer');
