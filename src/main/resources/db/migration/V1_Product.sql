@@ -1,8 +1,8 @@
 create table products
 (
-    id         bigserial primary key,
-    title      varchar(255)  not null,
-    price      numeric(8, 2) not null
+    id    bigserial primary key,
+    title varchar(255)  not null,
+    price numeric(8, 2) not null
 );
 
 insert into products (title, price)
