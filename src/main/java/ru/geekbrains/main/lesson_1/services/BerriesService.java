@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 import ru.geekbrains.main.lesson_1.converters.BerriesConverter;
 import ru.geekbrains.main.lesson_1.dao.BerriesRepository;
-import ru.geekbrains.main.lesson_1.dto.BerriesDto;
+import ru.geekbrains.main.lesson_1.dto.ExampleEntityDto;
 import ru.geekbrains.main.lesson_1.entities.Berries;
 
 import java.util.List;
@@ -28,10 +28,10 @@ public class BerriesService {
     }
 
     @Transactional
-    public Berries update(BerriesDto berriesDto) throws Exception {
-        Berries product = berriesRepository.findById(berriesDto.getId()).orElseThrow(() -> new Exception("Невозможно обновить продукта, не найден в базе, id: " + berriesDto.getId()));
-        product.setPrice(berriesDto.getPrice());
-        product.setTitle(berriesDto.getTitle());
+    public Berries update(ExampleEntityDto exampleEntityDto) throws Exception {
+        Berries product = berriesRepository.findById(exampleEntityDto.getId()).orElseThrow(() -> new Exception("Невозможно обновить продукта, не найден в базе, id: " + exampleEntityDto.getId()));
+        product.setPrice(exampleEntityDto.getPrice());
+        product.setTitle(exampleEntityDto.getTitle());
         return product;
     }
 
