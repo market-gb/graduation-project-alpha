@@ -1,6 +1,8 @@
 package ru.geekbrains.main.lesson_1.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -8,6 +10,8 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="comments")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Comment {
 
     @Id
@@ -24,4 +28,9 @@ public class Comment {
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    public Comment(String text, String authorName) {
+        this.text = text;
+        this.authorName = authorName;
+    }
 }
