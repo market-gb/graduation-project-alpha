@@ -1,0 +1,59 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: pg_container
+    image: postgres:14.2
+    environment:
+      - POSTGRES_DB=lesson-1
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - gb-net
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-U", "postgres" ]
+      interval: 5s
+      timeout: 1s
+      retries: 2
+
+  flyway:
+    container_name: flyway_container
+    image: flyway/flyway
+    command:
+      -url=jdbc:postgresql://postgres:5432/lesson-1 -schemas=public -user=postgres -password=postgres -connectRetries=30 migrate
+    volumes:
+      - ./src/main/resources/db/migration:/flyway/sql
+    depends_on:
+      - postgres
+    networks:
+      - gb-net
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    networks:
+      - gb-net
+
+#  backend_spring:
+#    container_name: backend_spring
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    environment:
+#      - 'spring.datasource.hikari.schema=public'
+#    ports:
+#      - "8000:8000"
+#    depends_on:
+#      - flyway
+#    networks:
+#      - gb-net
+networks:
+  gb-net:
+    driver: bridge
