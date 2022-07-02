@@ -1,5 +1,6 @@
 package ru.geekbrains.main.lesson_1.controllers;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
