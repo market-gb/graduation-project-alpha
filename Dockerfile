@@ -1,4 +1,4 @@
 FROM openjdk:17
-COPY /target/graduation-project-0.0.1-jar-with-dependencies.jar /tmp
-WORKDIR /tmp
-ENTRYPOINT ["java","-jar","/tmp/graduation-project-0.0.1-jar-with-dependencies.jar"]
+ARG JAR_FILE=target/graduation-project-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+COPY ${JAR_FILE} market.jar
+ENTRYPOINT ["java", "-jar", "/market.jar"]
