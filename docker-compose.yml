@@ -8,7 +8,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
-      - '5432:5432'
+      - 5430:5432
     networks:
       - gb-net
     healthcheck:
@@ -37,23 +37,23 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - "5050:80"
+      - 5050:80
     networks:
       - gb-net
 
-#  backend_spring:
-#    container_name: backend_spring
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    environment:
-#      - 'spring.datasource.hikari.schema=public'
-#    ports:
-#      - "8000:8000"
-#    depends_on:
-#      - flyway
-#    networks:
-#      - gb-net
+  backend_spring:
+    container_name: backend_spring
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres/lesson-1
+    ports:
+      - 8000:8000
+    depends_on:
+      - flyway
+    networks:
+      - gb-net
 networks:
   gb-net:
     driver: bridge
